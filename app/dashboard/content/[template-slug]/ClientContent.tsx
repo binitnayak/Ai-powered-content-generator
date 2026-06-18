@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState } from "react";
@@ -12,17 +13,11 @@ interface PROPS {
 export default function ClientContent({ selectedTemplate }: PROPS) {
   const [aiOutput, setAiOutput] = useState<string>("");
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string>(""); // Track errors separately
 
   const generateAIContent = async (formData: any) => {
-    if (!selectedTemplate) {
-      setError("No template selected");
-      return;
-    }
+    if (!selectedTemplate) return;
 
     setLoading(true);
-    setError(""); // Clear previous errors
-    setAiOutput(""); // Clear previous output
 
     const FinalAIPrompt =
       JSON.stringify(formData) + ", " + selectedTemplate.aiPrompt;
@@ -31,7 +26,7 @@ export default function ClientContent({ selectedTemplate }: PROPS) {
       const res = await fetch("/api/generate", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json", // ✅ VERY IMPORTANT
         },
         body: JSON.stringify({
           prompt: FinalAIPrompt,
@@ -40,20 +35,15 @@ export default function ClientContent({ selectedTemplate }: PROPS) {
 
       const data = await res.json();
 
+      // ✅ handle backend error
       if (!res.ok) {
-        throw new Error(data.error || `HTTP Error: ${res.status}`);
-      }
-
-      if (!data.text) {
-        throw new Error("No content generated");
+        throw new Error(data.error || "Something went wrong");
       }
 
       setAiOutput(data.text);
     } catch (e: any) {
       console.error("CLIENT ERROR:", e);
-      const errorMsg = e.message || "Something went wrong";
-      setError(errorMsg);
-      setAiOutput(""); // Clear output on error
+      setAiOutput("Error generating content: " + e.message);
     } finally {
       setLoading(false);
     }
@@ -67,11 +57,7 @@ export default function ClientContent({ selectedTemplate }: PROPS) {
         loading={loading}
       />
 
-      <OutputSection 
-        aiOutput={aiOutput} 
-        error={error}
-        isLoading={loading}
-      />
+      <OutputSection aiOutput={aiOutput} />
     </div>
   );
 }

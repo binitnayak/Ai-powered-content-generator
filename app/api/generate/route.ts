@@ -1,25 +1,26 @@
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import { OpenAI } from "openai";
 
 export async function POST(req: Request) {
   try {
     const { prompt } = await req.json();
 
-    if (!process.env.GEMINI_API_KEY) {
+    if (!process.env.OPENAI_API_KEY) {
       return new Response(
-        JSON.stringify({ error: "Missing GEMINI_API_KEY" }),
+        JSON.stringify({ error: "Missing OPENAI_API_KEY" }),
         { status: 500 }
       );
     }
 
-    const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-
-    const model = genAI.getGenerativeModel({
-      model: "gemini-1.5-flash", // ✅ FIXED - removed "-001"
+    const openai = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
     });
 
-    const result = await model.generateContent(prompt);
+    const response = await openai.chat.completions.create({
+      model: "gpt-3.5-turbo",
+      messages: [{ role: "user", content: prompt }],
+    });
 
-    const text = result.response.text();
+    const text = response.choices[0].message.content;
 
     return Response.json({ text });
 
