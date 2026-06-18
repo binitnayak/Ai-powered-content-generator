@@ -11,6 +11,9 @@
   "dependencies": {
     "@clerk/elements": "^0.24.18",
     "@clerk/nextjs": "^7.4.2",
+    "@google/generative-ai": "^0.24.1",
+    "@tiptap/react": "^3.27.0",
+    "@tiptap/starter-kit": "^3.27.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^1.17.0",
