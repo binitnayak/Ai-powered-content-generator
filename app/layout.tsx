@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -24,9 +25,17 @@ export default function RootLayout({
       <html
         lang="en"
         className={`${outfit.variable} h-full antialiased`}
+        suppressHydrationWarning
       >
         <body className="min-h-full flex flex-col font-outfit">
-          {children}
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
         </body>
       </html>
     </ClerkProvider>

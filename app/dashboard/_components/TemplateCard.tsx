@@ -9,17 +9,19 @@ import { TEMPLATE } from '@/app/types'
 function TemplateCard({ item }: { item: TEMPLATE }) {
   return (
     <Link href={'/dashboard/content/' + item.slug}>
-      <div className="p-5 rounded-xl border bg-white/80 backdrop-blur-md flex flex-col gap-3 cursor-pointer 
-      shadow-sm hover:shadow-2xl 
-      hover:-translate-y-1 hover:scale-105 
-      transition-all duration-300">
+      <div className="p-6 rounded-2xl border bg-card/50 backdrop-blur-xl flex flex-col gap-4 cursor-pointer 
+      shadow-sm hover:shadow-xl hover:shadow-purple-500/10 hover:border-purple-500/50
+      hover:-translate-y-2 
+      transition-all duration-300 group">
 
-        {/* ✅ Better to use next/image */}
-        <Image src={item.icon} alt="icon" width={50} height={50} />
+        <div className="bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30 p-3 rounded-xl w-fit group-hover:scale-110 transition-transform duration-300">
+          <Image src={item.icon} alt="icon" width={40} height={40} className="drop-shadow-sm" />
+        </div>
 
-        <h2 className='font-medium text-lg'>{item.name}</h2>
-        <p className='text-gray-500 line-clamp-3'>{item.desc}</p>
-
+        <div>
+          <h2 className='font-bold text-xl text-card-foreground group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors'>{item.name}</h2>
+          <p className='text-muted-foreground line-clamp-3 mt-2 text-sm leading-relaxed'>{item.desc}</p>
+        </div>
       </div>
     </Link>
   )

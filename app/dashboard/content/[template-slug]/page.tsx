@@ -34,5 +34,10 @@ export default async function CreateNewContent({ params }: { params: Promise<{ '
     (item) => item.slug === resolvedParams['template-slug']
   );
 
+
+
+
+
+  
   return <ClientContent selectedTemplate={selectedTemplate} />;
 }
