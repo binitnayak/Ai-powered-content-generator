@@ -1,200 +1,175 @@
-<div align="center">
-
 # 🤖 AI Powered Content Generator
 
-### Generate high-quality AI content in seconds with OpenAI 🚀
-
-[![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)]()
-[![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react)]()
-[![TypeScript](https://img.shields.io/badge/TypeScript-blue?style=for-the-badge&logo=typescript)]()
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38BDF8?style=for-the-badge&logo=tailwind-css)]()
-[![OpenAI](https://img.shields.io/badge/OpenAI-GPT-black?style=for-the-badge&logo=openai)]()
-[![Neon](https://img.shields.io/badge/Neon-PostgreSQL-00E599?style=for-the-badge)]()
+An AI-powered web application that helps users generate high-quality content such as blog posts, social media captions, emails, product descriptions, and more using OpenAI. The application provides a clean and responsive interface with secure authentication and cloud database integration.
 
 ---
 
-### ✨ AI Powered • Modern UI • Authentication • Cloud Database
+## 📌 Internship Details
 
-<img src="./screenshots/banner.png" width="100%" />
-
-</div>
-
----
-
-# 📖 Table of Contents
-
-- About
-- Features
-- Tech Stack
-- Screenshots
-- Installation
-- Environment Variables
-- Folder Structure
-- Future Improvements
-- Author
+| Details | Information |
+|---------|-------------|
+| **Intern ID** | CITS2334 |
+| **Intern Name** | Binit Nayak |
+| **Project Name** | AI Powered Content Generator |
+| **Project Duration** | 5 Days |
 
 ---
 
-# 🚀 About The Project
+# 🚀 Live Features
 
-AI Powered Content Generator is a modern full-stack web application that enables users to generate high-quality AI content using OpenAI.
-
-Users can create blogs, emails, captions, product descriptions, YouTube titles, and much more within seconds.
-
-The project focuses on performance, responsive design, authentication, and seamless AI integration.
-
----
-
-# ✨ Features
-
-✅ AI Content Generation
-
-✅ Secure Authentication
-
-✅ Responsive Dashboard
-
-✅ Beautiful UI
-
-✅ Multiple AI Templates
-
-✅ Copy Generated Text
-
-✅ Content History
-
-✅ Cloud Database
-
-✅ Fast Performance
+- 🤖 AI Content Generation using OpenAI
+- 🔐 Secure User Authentication (Clerk)
+- 📝 Multiple AI Templates
+- 📜 Content History
+- 📋 Copy Generated Content
+- 📱 Fully Responsive Design
+- ⚡ Fast Performance
+- ☁️ Neon PostgreSQL Database Integration
 
 ---
 
-# 🛠 Tech Stack
+# 🛠️ Tech Stack
 
-| Technology | Usage |
-|------------|-------|
-| Next.js | Framework |
-| React | Frontend |
-| TypeScript | Language |
-| Tailwind CSS | Styling |
-| Clerk | Authentication |
-| OpenAI | AI Content |
-| Neon PostgreSQL | Database |
-| Vercel | Deployment |
+### Frontend
+- Next.js
+- React.js
+- TypeScript
+- Tailwind CSS
+
+### Backend
+- Next.js API Routes
+
+### AI Integration
+- OpenAI API
+
+### Authentication
+- Clerk Authentication
+
+### Database
+- Neon PostgreSQL
+
+### Deployment
+- Vercel
 
 ---
 
-# 📸 Screenshots
+# 📷 Project Screenshots
 
-## 🏠 Landing Page
+## 🏠 Home Page
 
-<img src="./screenshots/home.png"/>
+<img width="1912" height="971" alt="image" src="https://github.com/user-attachments/assets/dabc2271-4ac3-448b-be13-4d3deb496b95" />
+
 
 ---
 
 ## 📊 Dashboard
 
-<img src="./screenshots/dashboard.png"/>
+![Dashboard](./screenshots/dashboard.png)
+
+---
+# 📂 Folder Structure
+
+```
+AI-Powered-Content-Generator/
+│
+├── app/
+├── components/
+├── utils/
+├── lib/
+├── public/
+├── screenshots/
+├── README.md
+├── package.json
+└── ...
+```
 
 ---
 
-## 🤖 AI Generator
+# ⚙️ Installation
 
-<img src="./screenshots/generator.png"/>
-
----
-
-## 📝 Templates
-
-<img src="./screenshots/templates.png"/>
-
----
-
-## 📜 History
-
-<img src="./screenshots/history.png"/>
-
----
-
-# ⚙ Installation
+Clone the repository
 
 ```bash
-git clone https://github.com/binitnayak/AI-Powered-Content-Generator
+git clone https://github.com/binitnayak/AI-Powered-Content-Generator.git
+```
 
+Move to project directory
+
+```bash
 cd AI-Powered-Content-Generator
+```
 
+Install dependencies
+
+```bash
 npm install
+```
 
+Start development server
+
+```bash
 npm run dev
+```
+
+Open
+
+```
+http://localhost:3000
 ```
 
 ---
 
 # 🔑 Environment Variables
 
+Create a `.env.local` file and add:
+
 ```env
-OPENAI_API_KEY=
-
-DATABASE_URL=
-
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
 
 CLERK_SECRET_KEY=
+
+DATABASE_URL=
+
+OPENAI_API_KEY=
 ```
 
 ---
 
-# 📂 Folder Structure
+# 📖 Project Workflow
 
-```
-AI-Powered-Content-Generator
-│
-├── app
-├── components
-├── configs
-├── hooks
-├── lib
-├── public
-├── screenshots
-├── README.md
-└── package.json
-```
+1. User signs in securely using Clerk Authentication.
+2. User selects an AI content template.
+3. User enters a prompt.
+4. OpenAI generates content.
+5. Generated content is displayed instantly.
+6. User can copy and save generated content.
+7. Content history is stored in Neon PostgreSQL.
 
 ---
 
-# 🎯 Internship Details
-
-| Field | Value |
-|-------|-------|
-| Intern ID | CITS2334 |
-| Intern Name | Binit Nayak |
-| Project | AI Powered Content Generator |
-| Duration | 5 Days |
-
----
-
-# 🌟 Future Improvements
+# 🌟 Future Enhancements
 
 - AI Image Generation
-- Team Workspace
-- Export PDF
-- Export DOCX
+- PDF Export
 - Multi-language Support
-- AI Chat Assistant
+- Team Collaboration
+- Content Analytics
 - Dark Mode
 
 ---
 
 # 👨‍💻 Author
 
-### Binit Nayak
+**Binit Nayak**
 
-GitHub → https://github.com/binitnayak
+📧 Email: *Your Email*
 
-Made with ❤️ using Next.js + OpenAI
+🐙 GitHub: https://github.com/binitnayak
 
 ---
 
-<div align="center">
+# 📄 License
 
-## ⭐ If you like this project, don't forget to Star the Repository ⭐
+This project was developed as part of an internship learning program.
 
-</div>
+© 2026 Binit Nayak
