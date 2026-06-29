@@ -62,9 +62,7 @@ An AI-powered web application that helps users generate high-quality content suc
 
 ---
 
-## 📊 Dashboard
 
-![Dashboard](./screenshots/dashboard.png)
 
 ---
 # 📂 Folder Structure
@@ -162,7 +160,7 @@ OPENAI_API_KEY=
 
 **Binit Nayak**
 
-📧 Email: *Your Email*
+📧 Email: binitnayak00@gmail.com
 
 🐙 GitHub: https://github.com/binitnayak
 
