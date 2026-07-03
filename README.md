@@ -4,16 +4,6 @@ An AI-powered web application that helps users generate high-quality content suc
 
 ---
 
-## 📌 Internship Details
-
-| Details | Information |
-|---------|-------------|
-| **Intern ID** | CITS2334 |
-| **Intern Name** | Binit Nayak |
-| **Project Name** | AI Powered Content Generator |
-| **Project Duration** | 5 Days |
-
----
 
 # 🚀 Live Features
 
