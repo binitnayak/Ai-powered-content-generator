@@ -56,13 +56,6 @@
 
 # 📸 Project Showcase
 
-## 🏠 Home Dashboard
-
-<p align="center">
-<img src="./screenshots/home.png" width="100%">
-</p>
-
----
 
 ## ✨ AI Templates
 
